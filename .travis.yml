@@ -6,8 +6,9 @@ services:
 #  - docker build -t worker -f ./worker/Dockerfile.dev ./worker
 #  - docker build -t nginx -f ./nginx/Dockerfile.dev ./nginx
 #  - docker build -t client -f ./client/Dockerfile.dev ./client
-script:
-  - docker compose up
+install:
+  - docker-compose build
+  - docker-compose up
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
